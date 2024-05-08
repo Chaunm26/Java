@@ -10,24 +10,37 @@ public class StudentManagement {
         inputAStudent();
     }
 
+    /**
+     * 
+     */
     public static void inputAStudent() {
-        String id, name;
+        String id, name, call;
         double gpa;
 
-        try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Id = ");
-            id = sc.nextLine();
-            System.out.print("Name = ");
+        while (true) {
 
-            name = sc.nextLine();
-            System.out.print("GPA = ");
+            try (Scanner sc = new Scanner(System.in)) {
+                System.out.print("Id = ");
+                id = sc.nextLine();
+                System.out.print("Name = ");
 
-            gpa = sc.nextDouble();
-            Student x = new Student(id, name, gpa);
-            x.showProfile();
+                name = sc.nextLine();
+                System.out.print("GPA = ");
+
+                gpa = sc.nextDouble();
+                Student x = new Student(id, name, gpa);
+                x.showProfile();
+                System.out.println("\n");
+
+                System.out.print("Do u want to do again --- Y/N : ");
+                call = sc.nextLine();
+                System.out.print("Do u want to do again --- Y/N : ");
+
+                break;
+
+            }
 
         }
 
     }
-
 }
